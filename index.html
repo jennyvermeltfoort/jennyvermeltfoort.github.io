@@ -19,5 +19,15 @@
 				<li><p><a href="game_of_optimization.html">Game of Optimization</a></p></li>
 			</ol>
 		</div> <!--center-->
+
+Branchless Min/Max: min = a * (a <= b) + b * (a > b);  // No if-else!
+Conditional Swap:
+	// Swap x and y if (a > b), no branches: 
+	mask = (a > b) * (x ^ y);
+	x ^= mask;
+	y ^= mask;
+
+	Sign Function Without Branches:
+		sign = (a > 0) - (a < 0);  // Returns -1, 0, or 1
 	</body>
 </html>
